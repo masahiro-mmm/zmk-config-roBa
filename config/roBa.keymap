@@ -151,19 +151,19 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans                       &trans                                           &trans     &mkp MB4  &mkp MB5  &kp LEFT_ALT      &trans
+&trans  &trans  &trans  &trans                       &trans  &trans      &trans                       &kp LC(C)  &mkp MB1  &mkp MB2  &kp LEFT_CONTROL  &mo 5
+&trans  &trans  &trans  &trans                       &trans  &trans      &trans                       &kp LG(V)  &trans    &trans    &kp LEFT_SHIFT    &mo 5
+&trans  &trans  &trans  &to_layer_0 INTERNATIONAL_5  &trans  &trans      &to_layer_0 INTERNATIONAL_4  &trans                                           &trans
             >;
         };
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &kp LEFT_ALT      &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT_CONTROL  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT_SHIFT    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                    &trans
             >;
         };
 
