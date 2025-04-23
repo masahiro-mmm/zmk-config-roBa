@@ -125,8 +125,8 @@
         default_layer {
             bindings = <
 &kp Q             &kp W             &kp E         &kp R               &kp T                                                                     &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S             &kp D         &kp F               &kp G                   &kp LS(LG(S))         &kp UP_ARROW                &kp H        &kp J  &kp K      &kp L    &lt 5 MINUS
-&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V               &kp B                   &kigo                 &kp DOWN_ARROW              &kp N        &kp M  &kp COMMA  &kp DOT  &lt 5 SLASH
+&kp A             &kp S             &kp D         &kp F               &kp G                   &to 1                 &kp UP_ARROW                &kp H        &kp J  &kp K      &kp L    &lt 5 MINUS
+&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V               &kp B                   &lt 6 LG(LS(S))       &kp DOWN_ARROW              &kp N        &kp M  &kp COMMA  &kp DOT  &lt 5 SLASH
 &mt LCTRL ESCAPE  &mt LEFT_ALT DEL  &kp LEFT_WIN  &lt 1 INT_MUHENKAN  &mt LEFT_CONTROL SPACE  &mt LEFT_WIN TAB      &mt RIGHT_SHIFT INT_HENKAN  &lt 1 ENTER                             &loginm
             >;
 
@@ -135,21 +135,21 @@
 
         FUNCTION {
             bindings = <
-&kp F10    &kp F5     &kp F4         &kp F2         &trans                               &enzan         &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans
-&string    &atesaki   &kakko         &kigo          &kp HOME  &trans      &kp PAGE_UP    &kp BACKSPACE  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
-&kp LC(Z)  &kp LC(X)  &kp LC(LA(C))  &kp LC(LA(V))  &kp END   &kakko      &kp PAGE_DOWN  &kp RIGHT_ALT  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
-&trans     &trans     &trans         &trans         &trans    &trans      &trans         &trans                                          &kp KP_NUM
+&kp F10        &kp F5         &kp F4         &kp F2         &trans                               &enzan         &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans
+&string        &atesaki       &kakko         &kigo          &kp HOME  &to 0       &kp PAGE_UP    &kp BACKSPACE  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
+&kp LC(LG(V))  &kp LC(LS(V))  &kp LC(LA(C))  &kp LC(LA(V))  &kp END   &trans      &kp PAGE_DOWN  &kp RIGHT_ALT  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
+&trans         &trans         &trans         &trans         &trans    &trans      &trans         &trans                                          &kp KP_NUM
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
         };
 
-        NUM {
+        launcher {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                   &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR            &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE       &kp BACKSLASH
-&trans                      &trans           &trans           &trans           &trans        &trans                       &trans          &trans                                                                     &kp PIPE
+&kp LS(LA(LC(Q)))  &kp LS(LA(LC(W)))  &kp LS(LC(LA(E)))  &kp LS(LC(LA(R)))  &kp LS(LC(LA(T)))                      &kp LS(LC(LA(Y)))  &kp LS(LC(LA(U)))  &kp LS(LC(LA(I)))   &kp LS(LC(LA(O)))   &kp LS(LC(LA(P)))
+&kp LS(LC(LA(A)))  &kp LS(LC(LA(S)))  &kp LS(LC(LA(D)))  &kp LS(LC(LA(F)))  &kp LS(LC(LA(G)))  &trans      &trans  &kp LS(LC(LA(H)))  &kp LS(LC(LA(J)))  &kp LS(LC(LA(K)))   &kp LS(LC(LA(L)))   &kp LS(LC(LA(EQUAL)))
+&kp LS(LC(LA(Z)))  &kp LS(LC(LA(X)))  &kp LS(LA(LC(C)))  &kp LS(LC(LA(V)))  &kp LS(LC(LA(B)))  &trans      &trans  &kp LS(LC(LA(N)))  &kp LS(LC(LA(M)))  &kp LS(LC(LA(LT)))  &kp LS(LC(LA(GT)))  &kp LS(LC(LA(QMARK)))
+&trans             &trans             &trans             &trans             &trans             &trans      &trans  &trans                                                                        &trans
             >;
         };
 
@@ -166,10 +166,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans                       &trans                                           &trans     &mkp MB4  &mkp MB5  &kp LEFT_ALT      &trans
-&trans  &trans  &trans  &trans                       &trans  &trans      &trans                       &kp LC(C)  &mkp MB1  &mkp MB2  &kp LEFT_CONTROL  &mo 5
-&trans  &trans  &trans  &trans                       &trans  &trans      &trans                       &kp LG(V)  &trans    &trans    &kp LEFT_SHIFT    &mo 5
-&trans  &trans  &trans  &to_layer_0 INTERNATIONAL_5  &trans  &trans      &to_layer_0 INTERNATIONAL_4  &trans                                           &trans
+&to_layer_0 Q       &to_layer_0 W       &to_layer_0 E         &to_layer_0 R                &to_layer_0 T                                                        &to_layer_0 Y      &mkp MB4           &mkp MB5           &kp LEFT_ALT      &to_layer_0 P
+&to_layer_0 A       &to_layer_0 S       &to_layer_0 D         &to_layer_0 F                &to_layer_0 G      &trans               &to_layer_0 UP_ARROW         &to_layer_0 H      &mkp_exit_AML MB1  &mkp_exit_AML MB2  &kp LEFT_CONTROL  &lt_to_layer_0 5 MINUS
+&to_layer_0 Z       &to_layer_0 X       &to_layer_0 C         &to_layer_0 V                &to_layer_0 B      &trans               &to_layer_0 DOWN_ARROW       &to_layer_0 N      &to_layer_0 M      &to_layer_0 COMMA  &kp LEFT_SHIFT    &lt_to_layer_0 5 SLASH
+&to_layer_0 ESCAPE  &to_layer_0 DELETE  &to_layer_0 LEFT_WIN  &to_layer_0 INTERNATIONAL_5  &to_layer_0 SPACE  &to_layer_0 TAB      &to_layer_0 INTERNATIONAL_4  &to_layer_0 ENTER                                                          &trans
             >;
         };
 
