@@ -120,10 +120,10 @@
 
         FUNCTION {
             bindings = <
-&kp F10    &kp F5     &kp F4     &kp F2     &trans                               &enzan         &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans
-&kp LC(A)  &kp LC(S)  &string    &atesaki   &kp HOME  &trans      &kp PAGE_UP    &kp BACKSPACE  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
-&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LG(V)  &kp END   &kakko      &kp PAGE_DOWN  &kp RIGHT_ALT  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
-&trans     &trans     &trans     &trans     &trans    &trans      &trans         &trans                                          &kp KP_NUM
+&kp F10    &kp F5     &kp F4         &kp F2         &trans                               &enzan         &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans
+&string    &atesaki   &kakko         &kigo          &kp HOME  &trans      &kp PAGE_UP    &kp BACKSPACE  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_DOT
+&kp LC(Z)  &kp LC(X)  &kp LC(LA(C))  &kp LC(LA(V))  &kp END   &kakko      &kp PAGE_DOWN  &kp RIGHT_ALT  &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_N0
+&trans     &trans     &trans         &trans         &trans    &trans      &trans         &trans                                          &kp KP_NUM
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
