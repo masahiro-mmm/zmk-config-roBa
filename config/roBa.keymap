@@ -68,7 +68,11 @@
         loginm: loginm {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(LA(DEL)) &kp N3 &kp N0 &kp N8 &kp N2 &kp LEFT_BRACKET &kp M &kp T &kp H &kp S &kp M &kp S &kp H &kp R &kp ENTER>;
+            bindings =
+                <&kp LC(LA(DEL))>,
+                <&macro_wait_time 2000>,
+                <&kp N3 &kp N0 &kp N8 &kp N2 &kp LEFT_BRACKET &kp M &kp T &kp H &kp S &kp M &kp S &kp H &kp R &kp ENTER>;
+
             label = "LOGINM";
         };
 
@@ -166,10 +170,10 @@
 
         MOUSE {
             bindings = <
-&to_layer_0 Q       &to_layer_0 W       &to_layer_0 E         &to_layer_0 R  &to_layer_0 T                                      &to_layer_0 Y  &mkp MB4           &mkp MB5           &kp LEFT_ALT      &to_layer_0 P
-&to_layer_0 A       &to_layer_0 S       &to_layer_0 D         &to_layer_0 F  &to_layer_0 G  &trans      &to_layer_0 UP_ARROW    &to_layer_0 H  &mkp_exit_AML MB1  &mkp_exit_AML MB2  &kp LEFT_CONTROL  &lt_to_layer_0 5 MINUS
-&to_layer_0 Z       &to_layer_0 X       &to_layer_0 C         &to_layer_0 V  &to_layer_0 B  &trans      &to_layer_0 DOWN_ARROW  &to_layer_0 N  &to_layer_0 M      &to_layer_0 COMMA  &kp LEFT_SHIFT    &lt_to_layer_0 5 SLASH
-&to_layer_0 ESCAPE  &to_layer_0 DELETE  &to_layer_0 LEFT_WIN  &trans         &trans         &trans      &trans                  &trans                                                                 &trans
+&to_layer_0 Q  &to_layer_0 W  &to_layer_0 E  &to_layer_0 R  &to_layer_0 T                                      &to_layer_0 Y  &mkp MB4           &mkp MB5           &kp LEFT_ALT      &to_layer_0 P
+&to_layer_0 A  &to_layer_0 S  &to_layer_0 D  &to_layer_0 F  &to_layer_0 G  &trans      &to_layer_0 UP_ARROW    &to_layer_0 H  &mkp_exit_AML MB1  &mkp_exit_AML MB2  &kp LEFT_CONTROL  &lt_to_layer_0 5 MINUS
+&to_layer_0 Z  &to_layer_0 X  &to_layer_0 C  &to_layer_0 V  &to_layer_0 B  &trans      &to_layer_0 DOWN_ARROW  &to_layer_0 N  &to_layer_0 M      &to_layer_0 COMMA  &kp LEFT_SHIFT    &lt_to_layer_0 5 SLASH
+&trans         &trans         &trans         &trans         &trans         &trans      &trans                  &trans                                                                 &trans
             >;
         };
 
