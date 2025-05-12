@@ -145,11 +145,8 @@
                 <&kp INT_HENKAN>,
                 <&macro_wait_time 500>,
                 <&kp LG(R)>,
-                <&macro_press>,
-                <&kp R &kp A &kp N &kp N &kp T &kp Y &kp A &kp K &kp I &kp MINUS &kp SPACE &kp SPACE>,
-                <&macro_press>,
-                <&kp>,
-                <&macro_press>;
+                <&macro_wait_time 0>,
+                <&kp R &kp A &kp N &kp N &kp T &kp Y &kp A &kp K &kp I &kp MINUS &kp SPACE &kp SPACE>;
 
             label = "SHC";
         };
