@@ -69,9 +69,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&kp LC(LA(DEL))>,
                 <&macro_wait_time 2000>,
-                <&kp N3>,
+                <&kp LC(LA(DEL)) &kp N3>,
                 <&macro_wait_time 0>,
                 <&kp N0 &kp N8 &kp N2 &kp LEFT_BRACKET &kp M &kp T &kp H &kp S &kp M &kp S &kp H &kp R &kp ENTER>;
 
@@ -102,42 +101,42 @@
         atesaki: atesaki {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp A &kp T &kp E &kp S &kp A &kp K &kp I &kp K &kp I &kp MINUS &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp A &kp T &kp E &kp S &kp A &kp K &kp I &kp K &kp I &kp MINUS &kp SPACE &kp SPACE>;
             label = "ATESAKI";
         };
 
         string: string {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp S &kp U &kp T &kp O &kp R &kp I &kp N &kp N &kp G &kp U &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp S &kp U &kp T &kp O &kp R &kp I &kp N &kp N &kp G &kp U &kp SPACE &kp SPACE>;
             label = "STRING";
         };
 
         calc: calc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(R) &kp C &kp A &kp L &kp C &kp RET>;
+            bindings = <&kp INT_MUHENKAN &kp LG(R) &kp C &kp A &kp L &kp C &kp RET>;
             label = "CALC";
         };
 
         notepad: notepad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(R) &kp N &kp O &kp T &kp E &kp P &kp A &kp D &kp RET>;
+            bindings = <&kp INT_MUHENKAN &kp LG(R) &kp N &kp O &kp T &kp E &kp P &kp A &kp D &kp RET>;
             label = "NOTEPAD";
         };
 
         shc: shc {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(R) &kp INT_HENKAN &kp S &kp H &kp I &kp H &kp O &kp K &kp A &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp LG(R) &kp R &kp A &kp N &kp N &kp T &kp Y &kp A &kp K &kp I &kp MINUS &kp SPACE &kp SPACE>;
             label = "SHC";
         };
 
         today: today {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(R) &kp N &kp O &kp W &kp ENTER>;
+            bindings = <&kp INT_MUHENKAN &kp LG(R) &kp N &kp O &kp W &kp ENTER>;
             label = "TODAY";
         };
     };
