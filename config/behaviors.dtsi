@@ -1,0 +1,35 @@
+/ {
+  behaviors {
+    trackball_up: trackball-move-up {
+      compatible = "zmk,behavior-trackball-move";
+      direction = "up";
+      keycode = <KC_UP>;
+      threshold = <5>;
+      interval-ms = <40>;
+    };
+
+    trackball_down: trackball-move-down {
+      compatible = "zmk,behavior-trackball-move";
+      direction = "down";
+      keycode = <KC_DOWN>;
+      threshold = <5>;
+      interval-ms = <40>;
+    };
+
+    trackball_left: trackball-move-left {
+      compatible = "zmk,behavior-trackball-move";
+      direction = "left";
+      keycode = <KC_LEFT>;
+      threshold = <5>;
+      interval-ms = <40>;
+    };
+
+    trackball_right: trackball-move-right {
+      compatible = "zmk,behavior-trackball-move";
+      direction = "right";
+      keycode = <KC_RIGHT>;
+      threshold = <5>;
+      interval-ms = <40>;
+    };
+  };
+};
