@@ -1,0 +1,15 @@
+&i2c1 {
+  pmw3610@0x00 {
+    compatible = "zmk,input-sensor-trackball";
+    reg = <0x00>;
+    label = "PMW3610";
+
+    input-remap {
+      compatible = "zmk,input-remap-trackball";
+      x-negative = <&trackball_left>;
+      x-positive = <&trackball_right>;
+      y-negative = <&trackball_up>;
+      y-positive = <&trackball_down>;
+    };
+  };
+};
