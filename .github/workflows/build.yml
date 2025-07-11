@@ -1,2 +1,48 @@
-zmk_repo: urob/zmk
-zmk_rev: main
+name: Build firmware
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout user config
+        uses: actions/checkout@v3
+        with:
+          path: config
+
+      - name: Checkout ZMK
+        uses: actions/checkout@v3
+        with:
+          repository: urob/zmk
+          ref: main
+          path: zmk
+
+      - name: Set up dependencies
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install west and deps
+        run: |
+          pip install west
+          west init -l config
+          west update
+          west zephyr-export
+          pip install -r zmk/zephyr/scripts/requirements.txt
+
+      - name: Build (replace with your board name)
+        run: |
+          west build -s zmk/app -d build/roba_left -b <YOUR_BOARD_NAME> -- -DSHIELD=roba_left
+          west build -s zmk/app -d build/roba_right -b <YOUR_BOARD_NAME> -- -DSHIELD=roba_right
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: |
+            build/roba_left/zephyr/zmk.uf2
+            build/roba_right/zephyr/zmk.uf2
