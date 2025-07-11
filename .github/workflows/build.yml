@@ -34,15 +34,12 @@ jobs:
           west zephyr-export
           pip install -r zmk/zephyr/scripts/requirements.txt
 
-      - name: Build (replace with your board name)
+      - name: Build for seeeduino_xiao_ble
         run: |
-          west build -s zmk/app -d build/roba_left -b seeeduino_xiao_ble> -- -DSHIELD=roba_left
-          west build -s zmk/app -d build/roba_right -b seeeduino_xiao_ble> -- -DSHIELD=roba_right
-
-      - name: Upload artifacts
+          west build -s zmk/app -b seeeduino_xiao_ble -d build/xiao_ble -- -DSHIELD=roba
+          
+      - name: Upload firmware
         uses: actions/upload-artifact@v3
         with:
           name: firmware
-          path: |
-            build/roba_left/zephyr/zmk.uf2
-            build/roba_right/zephyr/zmk.uf2
+          path: build/xiao_ble/zephyr/zmk.uf2
