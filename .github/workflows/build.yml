@@ -36,8 +36,8 @@ jobs:
 
       - name: Build (replace with your board name)
         run: |
-          west build -s zmk/app -d build/roba_left -b <YOUR_BOARD_NAME> -- -DSHIELD=roba_left
-          west build -s zmk/app -d build/roba_right -b <YOUR_BOARD_NAME> -- -DSHIELD=roba_right
+          west build -s zmk/app -d build/roba_left -b seeeduino_xiao_ble> -- -DSHIELD=roba_left
+          west build -s zmk/app -d build/roba_right -b seeeduino_xiao_ble> -- -DSHIELD=roba_right
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
