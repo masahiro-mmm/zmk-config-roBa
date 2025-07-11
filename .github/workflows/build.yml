@@ -38,8 +38,8 @@ jobs:
         run: |
           west build -s zmk/app -b seeeduino_xiao_ble -d build/xiao_ble -- -DSHIELD=roba
           
-      - name: Upload firmware
-        uses: actions/upload-artifact@v3
-        with:
-          name: firmware
-          path: build/xiao_ble/zephyr/zmk.uf2
+    - name: Upload firmware
+  uses: actions/upload-artifact@v4
+  with:
+    name: firmware
+    path: build/roba/zephyr/zmk.uf2
