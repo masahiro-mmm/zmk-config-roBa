@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout user config
         uses: actions/checkout@v3
-        with:
-          path: config
 
       - name: Checkout ZMK
         uses: actions/checkout@v3
