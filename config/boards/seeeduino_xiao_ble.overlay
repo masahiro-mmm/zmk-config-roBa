@@ -1,0 +1,21 @@
+&i2c1 {
+    status = "okay";
+    compatible = "nordic,nrf-twi";  // Nordic系I2C
+    sda-pin = <4>;  // Seeeduino XIAO BLE の D4 ピン
+    scl-pin = <5>;  // Seeeduino XIAO BLE の D5 ピン
+    clock-frequency = <I2C_BITRATE_FAST>;  // 高速モード（400kHz）
+
+    pmw3610@0x00 {
+        compatible = "zmk,input-sensor-trackball";
+        reg = <0x00>;
+        label = "PMW3610";
+
+        input-remap {
+            compatible = "zmk,input-remap-trackball";
+            x-negative = <&trackball_left>;
+            x-positive = <&trackball_right>;
+            y-negative = <&trackball_up>;
+            y-positive = <&trackball_down>;
+        };
+    };
+};
