@@ -63,6 +63,66 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+         loginm: loginm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_wait_time 2000>,
+                <&kp LC(LA(DEL))>,
+                <&macro_wait_time 0>,
+                <&kp N3 &kp N0 &kp N8 &kp N2 &kp LEFT_BRACKET &kp M &kp T &kp H &kp S &kp M &kp S &kp H &kp R &kp ENTER>;
+
+            label = "LOGINM";
+        };
+
+        kigo: kigo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp N &kp SPACE &kp SPACE>;
+            label = "KIGO";
+        };
+
+        kakko: kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp P &kp E &kp SPACE &kp SPACE>;
+            label = "KAKKO";
+        };
+
+        enzan: enzan {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp R &kp E &kp SPACE &kp SPACE>;
+            label = "ENZAN";
+        };
+
+        atesaki: atesaki {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp V &kp E &kp SPACE &kp SPACE>;
+            label = "ATESAKI";
+        };
+
+        string: string {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp INT_HENKAN &kp Q &kp A &kp SPACE &kp SPACE>;
+            label = "STRING";
+        };
+
+        calc: calc {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp INT_MUHENKAN>,
+                <&macro_wait_time 500>,
+                <&kp LG(R)>,
+                <&macro_wait_time 0>,
+                <&kp C &kp A &kp L &kp C &kp RET>;
+
+            label = "CALC";
+        };
     };
 
     behaviors {
