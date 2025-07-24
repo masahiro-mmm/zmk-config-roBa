@@ -24,6 +24,19 @@
         wait-ms = <5>;
         tap-ms = <5>;
     };
+
+　　　controle {
+        layers = <6>;
+        bindings =
+            <&kp TAB>,
+            <&kp LS(TAB)>,
+            <&kp LG(D)>,
+            <&kp LG(TAB)>;
+
+        tick = <10>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+    };
 };
 
 / {
