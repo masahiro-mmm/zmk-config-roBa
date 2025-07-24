@@ -142,15 +142,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
-
-        alt_l6: alt_l6 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ALT_L6";
-            bindings = <&kp LC(C)>,<&mo 6 &kp LALT>;
-            hold-trigger-key-positions = <0>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-        };
     };
 
     keymap {
@@ -161,7 +152,7 @@
 &kp Q                        &kp W          &kp E          &kp R            &kp T                                                               &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A                        &kp S          &kp D          &kp F            &kp G                   &trans                  &mt RIGHT_ALT HOME  &kp H        &kp J  &kp K      &lt 4 L  &lt 5 MINUS
 &mt LEFT_SHIFT Z             &kp X          &kp C          &kp V            &kp B                   &mkp MB1                &mt RIGHT_GUI END   &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&mt INT_MUHENKAN INT_HENKAN  &kp LS(LG(S))  &kp LG(LC(V))  &alt_l6          &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE       &lt 1 ENTER                             &loginm
+&mt INT_MUHENKAN INT_HENKAN  &kp LS(LG(S))  &kp LG(LC(V))  &lt 6 LC(C)      &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE       &lt 1 ENTER                             &loginm
             >;
 
             sensor-bindings = <&inc_dec_kp LC(SEMICOLON) LC(MINUS)>;
