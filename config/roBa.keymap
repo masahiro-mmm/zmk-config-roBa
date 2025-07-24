@@ -19,16 +19,16 @@
             <&kp UP_ARROW>,
             <&kp DOWN_ARROW>;
 
-        tick = <10>;
+        tick = <25>;
         wait-ms = <5>;
         tap-ms = <5>;
     };
 
     control {
         layers = <6>;
-        bindings = <&kp TAB>, <&kp LS(TAB)>, <&kp LG(D)>, <&kp LG(TAB)>;
+        bindings = <&kp TAB>, <&kp LS(TAB)>, <&none>, <&none>;
 
-        tick = <10>;
+        tick = <50>;
         wait-ms = <5>;
         tap-ms = <5>;
     };
@@ -146,7 +146,7 @@
         alt_l6: alt_l6 {
             compatible = "zmk,behavior-hold-tap";
             label = "ALT_L6";
-            bindings = <&mo>, <&kp>;
+            bindings = <&mo &kp LALT>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
