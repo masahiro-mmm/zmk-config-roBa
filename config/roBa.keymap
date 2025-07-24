@@ -25,7 +25,7 @@
         tap-ms = <5>;
     };
 
-　　　controle {
+　　   control {
         layers = <6>;
         bindings =
             <&kp TAB>,
