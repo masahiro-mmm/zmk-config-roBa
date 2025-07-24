@@ -26,7 +26,7 @@
 
     control {
         layers = <6>;
-        bindings = <&kp TAB>, <&kp LS(TAB)>, <&none>, <&none>;
+        bindings = <&kp TAB>, <&kp LS(TAB)>, <&kp TAB>, <&kp LS(TAB)>;
 
         tick = <50>;
         wait-ms = <5>;
@@ -146,10 +146,10 @@
         alt_l6: alt_l6 {
             compatible = "zmk,behavior-hold-tap";
             label = "ALT_L6";
-            bindings = <&mo &kp LALT>, <&kp>;
-
-            #binding-cells = <2>;
+            bindings = <&kp LC(C)>,<&mo 6 &kp LALT>;
+            hold-trigger-key-positions = <0>;
             tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
         };
     };
 
