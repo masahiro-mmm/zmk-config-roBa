@@ -81,7 +81,7 @@
         atesaki: atesaki {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp V &kp E &kp SPACE &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp W &kp E &kp SPACE &kp SPACE>;
             label = "ATESAKI";
         };
 
@@ -90,19 +90,6 @@
             #binding-cells = <0>;
             bindings = <&kp INT_HENKAN &kp Q &kp A &kp SPACE &kp SPACE>;
             label = "STRING";
-        };
-
-        calc: calc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&kp INT_MUHENKAN>,
-                <&macro_wait_time 500>,
-                <&kp LG(R)>,
-                <&macro_wait_time 0>,
-                <&kp C &kp A &kp L &kp C &kp RET>;
-
-            label = "CALC";
         };
 
         atab: atab {
@@ -177,7 +164,7 @@
 &mt INT_MUHENKAN INT_HENKAN  &kp LG(LC(V))  &kp LC(LS(N))  &altl6 0 LC(C)  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE       &lt 1 ENTER                             &loginm
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(SEMICOLON) LC(MINUS)>;
+            sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
         };
 
         FUNCTION {
@@ -188,7 +175,7 @@
 &trans   &trans    &trans  &mt LG(V) LC(V)  &trans  &trans        &trans      &trans                                                         &kp KP_NUMLOCK
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(Z) LC(Y)>;
+            sensor-bindings = <&inc_dec_kp LC(SEMICOLON) LC(MINUS)>;
         };
 
         NUM {
@@ -220,10 +207,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT_CONTROL  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
