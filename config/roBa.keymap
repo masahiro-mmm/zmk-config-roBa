@@ -92,15 +92,15 @@
             label = "STRING";
         };
 
-        atab: atab {
+        win6: atab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&mo 6 &kp LEFT_ALT>,
+                <&mo 6 &kp LWIN>,
                 <&macro_pause_for_release>,
                 <&macro_release>,
-                <&mo 6 &kp LEFT_ALT>;
+                <&mo 6 &kp LWIN>;
 
             label = "ATAB";
         };
@@ -143,10 +143,10 @@
             mods = <(MOD_LALT)>;
         };
 
-        altl6: altl6 {
+        winl6: winl6 {
             compatible = "zmk,behavior-hold-tap";
-            label = "ALTL6";
-            bindings = <&atab>, <&kp>;
+            label = "WINL6";
+            bindings = <&win6>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -161,7 +161,7 @@
 &kp Q                        &kp W          &kp E          &kp R           &kp T                                                               &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A                        &kp S          &kp D          &kp F           &kp G                   &kp LG(LS(S))           &mt RIGHT_ALT HOME  &kp H        &kp J  &kp K      &lt 4 L  &lt 5 MINUS
 &mt LEFT_SHIFT Z             &kp X          &kp C          &kp V           &kp B                   &mkp MB1                &mt RIGHT_GUI END   &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&mt INT_MUHENKAN INT_HENKAN  &kp LG(LC(V))  &kp LC(LS(N))  &altl6 0 LC(C)  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE       &lt 1 ENTER                             &loginm
+&mt INT_MUHENKAN INT_HENKAN  &kp LG(LC(V))  &kp LC(LS(N))  &winl6 0 LC(C)  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE       &lt 1 ENTER                             &loginm
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
@@ -218,10 +218,10 @@
 
         layer_6 {
             bindings = <
-&trans  &trans        &winup    &trans         &trans                        &trans  &kp N7  &kp N8  &kp N9  &trans
-&trans  &kp LG(LEFT)  &windown  &kp LG(RIGHT)  &windesk  &trans      &trans  &trans  &kp N4  &kp N5  &kp N6  &trans
-&trans  &trans        &trans    &trans         &trans    &trans      &trans  &kp N0  &kp N1  &kp N2  &kp N3  &trans
-&trans  &trans        &trans    &trans         &trans    &trans      &trans  &trans                          &trans
+&trans  &trans    &kp UP_ARROW    &trans     &trans                       &trans     &trans  &trans  &trans  &trans
+&trans  &kp LEFT  &kp DOWN_ARROW  &kp RIGHT  &trans  &trans      &kp DEL  &trans     &trans  &trans  &trans  &trans
+&trans  &trans    &trans          &trans     &trans  &trans      &kp ESC  &trans     &trans  &trans  &trans  &trans
+&trans  &trans    &trans          &trans     &trans  &trans      &kp TAB  &kp LC(D)                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
