@@ -226,7 +226,7 @@
         FUNCTION {
             bindings = <
 &kp F10  &kp F5    &kp F4  &kp F2           &trans                               &enzan      &kp KP_N7        &kp KP_N8        &kp KP_N9        &trans
-&string  &atesaki  &kakko  &kigo            &mailpath  &trans        &kp DELETE  &kp KP_DOT  &kp KP_N4        &kp KP_N5        &kp KP_N6        &kp LS(SQT)
+&string  &atesaki  &kakko  &kigo            &mailpath  &trans        &kp DELETE  &kp KP_DOT  &kp KP_N4        &kp KP_N5        &kp KP_N6        &kp SQT
 &trans   &trans    &trans  &trans           &trans     &mkp MB2      &kp ESC     &kp KP_N0   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp SLASH
 &trans   &trans    &trans  &mt LG(V) LC(V)  &trans     &trans        &trans      &trans                                                         &kp KP_NUMLOCK
             >;
