@@ -64,35 +64,35 @@
         kigo: kigo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp N &kp SPACE &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp N &kp SPACE>;
             label = "KIGO";
         };
 
         kakko: kakko {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp P &kp E &kp SPACE &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp P &kp E &kp SPACE>;
             label = "KAKKO";
         };
 
         enzan: enzan {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp R &kp E &kp SPACE &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp R &kp E &kp SPACE>;
             label = "ENZAN";
         };
 
         atesaki: atesaki {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp W &kp E &kp SPACE &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp W &kp E &kp SPACE>;
             label = "ATESAKI";
         };
 
         string: string {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp Q &kp A &kp SPACE &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp Q &kp A &kp SPACE>;
             label = "STRING";
         };
 
@@ -131,7 +131,7 @@
             bindings =
                 <&kp INT_MUHENKAN>,
                 <&macro_pause_for_release>,
-                <&kp INT_HENKAN>;
+                <&kp INTERNATIONAL_4>;
 
             label = "EISU";
         };
@@ -139,7 +139,7 @@
         mailpath: path {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp M &kp E &kp MINUS &kp R &kp U &kp P &kp A &kp S &kp U &kp SPACE &kp SPACE>;
+            bindings = <&kp INT_HENKAN &kp M &kp E &kp MINUS &kp R &kp U &kp P &kp A &kp S &kp U &kp SPACE>;
             label = "PATH";
         };
     };
@@ -154,40 +154,13 @@
             tapping-term-ms = <200>;
         };
 
-        winup: winup {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WINUP";
-            bindings = <&trans>, <&kp LG(UP)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        windown: windown {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WINDOWN";
-            bindings = <&trans>, <&kp LG(DOWN)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        windesk: windesk {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WINDESK";
-            bindings = <&none>, <&kp LG(D)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
         winl6: winl6 {
             compatible = "zmk,behavior-hold-tap";
             label = "WINL6";
             bindings = <&win6>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <140>;
         };
 
         l1: l1 {
@@ -196,7 +169,7 @@
             bindings = <&num1>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <140>;
         };
 
         hold_eisu: hold_eisu {
@@ -205,7 +178,7 @@
             bindings = <&eisu>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <140>;
         };
     };
 
