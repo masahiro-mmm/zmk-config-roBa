@@ -5,7 +5,10 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
+    tapping-term-ms = <140>;
 };
+
+&lt { tapping-term-ms = <140>; };
 
 &trackball {
     automouse-layer = <3>;
@@ -190,7 +193,7 @@
 &kp Q                    &kp W          &kp E          &kp R           &kp T                                                               &kp Y        &kp U  &kp I      &kp O    &kp P
 &kp A                    &kp S          &kp D          &kp F           &kp G                   &kp LG(LS(S))           &mt RIGHT_ALT HOME  &kp H        &kp J  &kp K      &lt 4 L  &lt 5 MINUS
 &mt LEFT_SHIFT Z         &kp X          &kp C          &kp V           &kp B                   &mkp MB1                &mt RIGHT_GUI END   &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&hold_eisu 0 INT_HENKAN  &kp LG(LC(V))  &kp LC(LS(N))  &winl6 0 LC(C)  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE       &l1 0 ENTER                             &loginm
+&hold_eisu 0 INT_HENKAN  &kp LG(LC(V))  &kp LG(LS(S))  &winl6 0 LC(C)  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE       &l1 0 ENTER                             &loginm
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
@@ -203,8 +206,6 @@
 &trans   &trans    &trans  &trans           &trans     &mkp MB2      &kp ESC     &kp KP_N0   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp SLASH
 &trans   &trans    &trans  &mt LG(V) LC(V)  &trans     &trans        &trans      &trans                                                         &kp KP_NUMLOCK
             >;
-
-            sensor-bindings = <&inc_dec_kp LC(SEMICOLON) LC(MINUS)>;
         };
 
         NUM {
