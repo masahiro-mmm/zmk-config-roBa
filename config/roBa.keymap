@@ -5,7 +5,7 @@
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
-    tapping-term-ms = <140>;
+    tapping-term-ms = <160>;
 };
 
 &lt { tapping-term-ms = <140>; };
@@ -172,7 +172,7 @@
             bindings = <&num1>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <140>;
+            tapping-term-ms = <160>;
         };
 
         hold_eisu: hold_eisu {
