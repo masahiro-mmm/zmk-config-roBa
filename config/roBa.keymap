@@ -1,4 +1,5 @@
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -190,10 +191,10 @@
 
         default_layer {
             bindings = <
-&kp Q                    &kp W          &kp E          &kp R           &kp T                                                               &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A                    &kp S          &kp D          &kp F           &kp G                   &kp LG(LS(S))           &mt RIGHT_ALT HOME  &kp H        &kp J  &kp K      &lt 4 L  &lt 5 MINUS
-&mt LEFT_SHIFT Z         &kp X          &kp C          &kp V           &kp B                   &mkp MB1                &mt RIGHT_GUI END   &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&hold_eisu 0 INT_HENKAN  &kp LG(LC(V))  &kp LG(LS(S))  &winl6 0 LC(C)  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE       &l1 0 ENTER                             &loginm
+&kp Q                    &kp W          &kp E          &kp R           &kp T                                                          &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A                    &kp S          &kp D          &kp F           &kp G                   &bt BT_NXT              &kp ESC        &kp H        &kp J  &kp K      &lt 4 L  &lt 5 MINUS
+&mt LEFT_SHIFT Z         &kp X          &kp C          &kp V           &kp B                   &mkp MB1                &mkp MB1       &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&hold_eisu 0 INT_HENKAN  &kp LG(LC(V))  &kp LG(LS(S))  &winl6 0 LC(C)  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE  &l1 0 ENTER                             &loginm
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
@@ -203,7 +204,7 @@
             bindings = <
 &kp F10  &kp F5    &kp F4  &kp F2           &trans                               &enzan      &kp KP_N7        &kp KP_N8        &kp KP_N9        &trans
 &string  &atesaki  &kakko  &kigo            &mailpath  &trans        &kp DELETE  &kp KP_DOT  &kp KP_N4        &kp KP_N5        &kp KP_N6        &kp SQT
-&trans   &trans    &trans  &trans           &trans     &mkp MB2      &kp ESC     &kp KP_N0   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp SLASH
+&trans   &trans    &trans  &trans           &trans     &mkp MB2      &mkp MB2    &kp KP_N0   &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp SLASH
 &trans   &trans    &trans  &mt LG(V) LC(V)  &trans     &trans        &trans      &trans                                                         &kp KP_NUMLOCK
             >;
         };
