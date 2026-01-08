@@ -12,18 +12,18 @@
     automouse-layer = <4>;
     scroll-layers = <5>;
 
-     arrows {
-         layers = <3>;
-         bindings =
-             <&kp RIGHT_ARROW>,
-             <&kp LEFT_ARROW>,
-             <&kp UP_ARROW>,
-             <&kp DOWN_ARROW>;
+    arrows {
+        layers = <3>;
+        bindings =
+            <&kp RIGHT_ARROW>,
+            <&kp LEFT_ARROW>,
+            <&kp UP_ARROW>,
+            <&kp DOWN_ARROW>;
 
-         tick = <10>;
-         wait-ms = <5>;
-         tap-ms = <5>;
-     };
+        tick = <10>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+    };
 };
 
 / {
@@ -62,6 +62,42 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
+
+        login: login {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_wait_time 2000>,
+                <&kp LA(LC(DELETE))>,
+                <&macro_wait_time 0>,
+                <&kp N3 &kp N0 &kp N8 &kp N2 &kp LBKT &kp M &kp T &kp H &kp S &kp M &kp S &kp H &kp R &kp ENTER>;
+
+            label = "LOGIN";
+        };
+
+        l1_eisu: holdxeisuxl1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp INT_MUHENKAN &to 1>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&to 0 &kp INT_HENKAN>;
+
+            label = "HOLDXEISUXL1";
+        };
+
+        eisu: eisu {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp INT_MUHENKAN>,
+                <&macro_pause_for_release>,
+                <&macro_release>,
+                <&kp INT_HENKAN>;
+
+            label = "EISU";
         };
     };
 
