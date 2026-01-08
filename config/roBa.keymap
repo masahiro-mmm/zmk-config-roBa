@@ -76,7 +76,7 @@
             label = "LOGIN";
         };
 
-        l1_eisu: holdxeisuxl1 {
+        l1_eisu_hold: holdxeisuxl1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -88,7 +88,7 @@
             label = "HOLDXEISUXL1";
         };
 
-        eisu: eisu {
+        eisu_hold: eisu {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -110,6 +110,22 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        kp_l1: kp_l1 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "KP_L1";
+            bindings = <&l1_eisu_hold>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+        };
+
+        copy: copy {
+            compatible = "zmk,behavior-tap-dance";
+            label = "COPY";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>, <&kp LS(LC(C))>, <&kp LC(X)>;
+        };
     };
 
     keymap {
@@ -117,13 +133,13 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                        &kp T                                                          &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp COLON                          &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
+&kp Q             &kp W         &kp E         &kp R                        &kp T                                                            &kp Y           &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F                        &kp G                   &kp LS(LG(S))           &copy            &kp H           &kp J  &kp K      &lt 4 L  &lt 5 SQT
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B                   &mkp MB1                &mt LG(V) LC(V)  &kp N           &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&eisu_hold        &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE    &kp_l1 0 ENTER                             &kp ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
         };
 
         FUNCTION {
@@ -179,6 +195,15 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+            >;
+        };
+
+        layer_7 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
             >;
         };
     };
