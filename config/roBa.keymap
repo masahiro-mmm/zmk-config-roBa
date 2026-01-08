@@ -126,6 +126,36 @@
             #binding-cells = <0>;
             bindings = <&kp LC(C)>, <&kp LS(LC(C))>, <&kp LC(X)>;
         };
+
+        amse: amse {
+            compatible = "zmk,behavior-tap-dance";
+            label = "AMSE";
+            #binding-cells = <0>;
+            bindings = <&kp COLON>, <&kp DQT>, <&kp MINUS>, <&kp UNDER>;
+        };
+
+        pc: pc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PC";
+            #binding-cells = <0>;
+            bindings = <&kp PERIOD>, <&kp COMMA>;
+        };
+
+        kp_l1_alt: kp_l1_alt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "KP_L1_ALT";
+            bindings = <&l1_eisu_hold>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <120>;
+        };
+
+        esc_win_l1: esc_win_l1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESC_WIN_L1";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE>, <&kp LEFT_WIN>, <&sl 1>;
+        };
     };
 
     keymap {
@@ -133,10 +163,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                        &kp T                                                            &kp Y           &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                        &kp G                   &kp LS(LG(S))           &copy            &kp H           &kp J  &kp K      &lt 4 L  &lt 5 SQT
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B                   &mkp MB1                &mt LG(V) LC(V)  &kp N           &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&eisu_hold        &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE    &kp_l1 0 ENTER                             &kp ESCAPE
+&kp Q             &kp W     &kp E      &kp R        &kp T                                                            &kp Y           &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S     &kp D      &kp F        &kp G                   &kp LS(LG(S))           &copy            &kp H           &kp J  &kp K      &lt 3 L  &lt 5 MINUS
+&mt LEFT_SHIFT Z  &kp X     &kp C      &kp V        &kp B                   &mkp MB1                &mt LG(V) LC(V)  &kp N           &kp M  &kp COMMA  &kp DOT  &kp_l1_alt 0 SLASH
+&eisu_hold        &kp LEFT  &kp RIGHT  &esc_win_l1  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE    &kp_l1 0 ENTER                             &login
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
@@ -144,10 +174,10 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&trans  &trans  &trans  &trans  &trans                                          &amse   &kp N7  &kp N8  &kp N9  &kp BACKSPACE
+&trans  &trans  &trans  &trans  &trans  &trans        &kp LBKT                  &pc     &kp N4  &kp N5  &kp N6  &kp APOS
+&trans  &trans  &trans  &trans  &trans  &mkp MB2      &kp LS(NON_US_BACKSLASH)  &kp N0  &kp N1  &kp N2  &kp N3  &kp FSLH
+&trans  &trans  &trans  &trans  &trans  &trans        &trans                    &trans                          &kp F12
             >;
         };
 
@@ -162,10 +192,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                          &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                         &trans   &trans  &trans  &trans  &trans
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans    &trans   &trans  &trans  &trans  &kp LEFT_SHIFT
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans    &trans   &trans  &trans  &trans  &trans
+&trans          &trans                  &trans          &trans                   &trans   &trans      &kp HOME  &kp END                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -182,10 +212,10 @@
 
         SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT_CONTROL  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                    &trans
             >;
         };
 
