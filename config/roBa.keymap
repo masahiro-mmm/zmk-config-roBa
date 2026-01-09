@@ -9,7 +9,7 @@
 };
 
 &trackball {
-    automouse-layer = <4>;
+    //automouse-layer = <4>;
     scroll-layers = <5>;
 
     arrows {
@@ -17,6 +17,19 @@
         bindings =
             <&kp RIGHT_ARROW>,
             <&kp LEFT_ARROW>,
+            <&kp UP_ARROW>,
+            <&kp DOWN_ARROW>;
+
+        tick = <10>;
+        wait-ms = <5>;
+        tap-ms = <5>;
+    };
+
+    appswc {
+        layers = <1>;
+        bindings =
+            <&kp TAB>,
+            <&kp LS(TAB)>,
             <&kp UP_ARROW>,
             <&kp DOWN_ARROW>;
 
