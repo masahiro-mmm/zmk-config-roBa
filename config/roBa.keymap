@@ -10,6 +10,7 @@
 
 &trackball {
     //automouse-layer = <4>;
+
     scroll-layers = <5>;
 
     arrows {
@@ -27,11 +28,7 @@
 
     appswc {
         layers = <1>;
-        bindings =
-            <&kp TAB>,
-            <&kp LS(TAB)>,
-            <&kp UP_ARROW>,
-            <&kp DOWN_ARROW>;
+        bindings = <&kp TAB>, <&kp LS(TAB)>, <&kp UP_ARROW>, <&kp DOWN_ARROW>;
 
         tick = <10>;
         wait-ms = <5>;
@@ -130,14 +127,14 @@
         kigo: kigo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&kp INT_HENKAN &kp N &kp SPACE>;
             label = "KIGO";
         };
 
         kakko: kakko {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none>;
+            bindings = <&kp INT_HENKAN &kp P &kp E &kp SPACE>;
             label = "KAKKO";
         };
 
@@ -160,6 +157,13 @@
             #binding-cells = <0>;
             bindings = <&kp INT_HENKAN &kp LESS_THAN &kp GREATER_THAN &kp RET &kp LEFT>;
             label = "KAKKO_KAKU";
+        };
+
+        r_cp: r_copilt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(R) &kp LA(SLASH)>;
+            label = "R_COPILT";
         };
     };
 
@@ -225,6 +229,13 @@
             #binding-cells = <0>;
             bindings = <&kakko_maru>, <&kakko_kagi>, <&kakko_kaku>;
         };
+
+        eisu: eisu {
+            compatible = "zmk,behavior-tap-dance";
+            label = "EISU";
+            #binding-cells = <0>;
+            bindings = <&eisu_hold>, <&kp INT_MUHENKAN>;
+        };
     };
 
     keymap {
@@ -235,7 +246,7 @@
 &kp Q             &kp W     &kp E      &kp R        &kp T                                                            &kp Y           &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S     &kp D      &kp F        &kp G                   &kp LS(LG(S))           &copy            &kp H           &kp J  &kp K      &lt 3 L  &lt 5 MINUS
 &mt LEFT_SHIFT Z  &kp X     &kp C      &kp V        &kp B                   &mkp MB1                &mt LG(V) LC(V)  &kp N           &kp M  &kp COMMA  &kp DOT  &kp_l1_alt 0 SLASH
-&eisu_hold        &kp LEFT  &kp RIGHT  &esc_win_l1  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE    &kp_l1 0 ENTER                             &login
+&eisu             &kp LEFT  &kp RIGHT  &esc_win_l1  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE    &kp_l1 0 ENTER                             &login
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
@@ -243,7 +254,7 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans  &kakko             &kigo              &trans                                             &amse   &kp N7  &kp N8  &kp N9  &kp BACKSPACE
+&trans  &trans  &kakko             &kigo              &r_cp                                              &amse   &kp N7  &kp N8  &kp N9  &kp BACKSPACE
 &trans  &trans  &kp F4             &kp F2             &kakko_3p  &trans        &kp LBKT                  &pc     &kp N4  &kp N5  &kp N6  &kp APOS
 &trans  &trans  &kp LS(LA(LC(C)))  &kp LS(LA(LC(V)))  &kp LG(N)  &mkp MB2      &kp LS(NON_US_BACKSLASH)  &kp N0  &kp N1  &kp N2  &kp N3  &kp FSLH
 &trans  &trans  &trans             &trans             &trans     &trans        &trans                    &trans                          &kp DEL
