@@ -155,7 +155,7 @@
         kakko_kaku: kakko_kaku {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp INT_HENKAN &kp LESS_THAN &kp GREATER_THAN &kp RET &kp LEFT>;
+            bindings = <&kp INT_HENKAN &kp L &kp SPACE &kp RET &kp LEFT>;
             label = "KAKKO_KAKU";
         };
 
@@ -271,6 +271,13 @@
 
             tapping-term-ms = <400>;
         };
+
+        paste: paste {
+            compatible = "zmk,behavior-tap-dance";
+            label = "PASTE";
+            #binding-cells = <0>;
+            bindings = <&mt LG(V) LC(V)>, <&kp LC(LS(V))>;
+        };
     };
 
     keymap {
@@ -278,10 +285,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W     &kp E      &kp R     &kp T                                                            &kp Y           &kp U  &kp I      &kp O       &kp P
-&kp A             &kp S     &kp D      &kp F     &kp G                   &kp LS(LG(S))           &copy            &kp H           &kp J  &kp K      &lt 3 L     &lt 5 MINUS
-&mt LEFT_SHIFT Z  &kp X     &kp C      &kp V     &kp B                   &mkp MB1                &mt LG(V) LC(V)  &kp N           &kp M  &kp COMMA  &kp PERIOD  &kp_l1 0 SLASH
-&eisu             &kp LEFT  &kp RIGHT  &alt_win  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE    &kp_l1 0 ENTER                                &login
+&kp Q             &kp W     &kp E      &kp R     &kp T                                                          &kp Y           &kp U  &kp I      &kp O       &kp P
+&kp A             &kp S     &kp D      &kp F     &kp G                   &kp LS(LG(S))           &copy          &kp H           &kp J  &kp K      &lt 3 L     &lt 5 MINUS
+&mt LEFT_SHIFT Z  &kp X     &kp C      &kp V     &kp B                   &mkp MB1                &paste         &kp N           &kp M  &kp COMMA  &kp PERIOD  &kp_l1 0 SLASH
+&eisu             &kp LEFT  &kp RIGHT  &alt_win  &mt LEFT_CONTROL SPACE  &mt LEFT_SHIFT TAB      &kp BACKSPACE  &kp_l1 0 ENTER                                &login
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN_ARROW UP_ARROW>;
